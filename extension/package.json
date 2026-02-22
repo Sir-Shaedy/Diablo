@@ -1,0 +1,130 @@
+{
+  "name": "diablo",
+  "displayName": "Diablo — Security Intelligence",
+  "description": "AI-powered smart contract security auditing, education, and vulnerability intelligence. Powered by 50K+ real Solodit findings.",
+  "version": "0.1.0",
+  "publisher": "shady",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sir-Shaedy/Diablo"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Education",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "solidity",
+    "smart-contract",
+    "security",
+    "audit",
+    "web3",
+    "blockchain",
+    "defi",
+    "solodit"
+  ],
+  "activationEvents": [
+    "onLanguage:solidity"
+  ],
+  "main": "./out/extension.js",
+  "icon": "media/icon.png",
+  "contributes": {
+    "configuration": {
+      "title": "Diablo",
+      "properties": {
+        "diablo.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Path to the Python interpreter for the Diablo backend."
+        },
+        "diablo.autoStartBackend": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start the Diablo backend when the extension activates."
+        },
+        "diablo.backendPort": {
+          "type": "number",
+          "default": 8391,
+          "description": "Port for the Diablo backend server."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "diablo-sidebar",
+          "title": "Diablo",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "diablo-sidebar": [
+        {
+          "type": "webview",
+          "id": "diablo.dictionaryView",
+          "name": "Dictionary"
+        },
+        {
+          "type": "webview",
+          "id": "diablo.academyView",
+          "name": "Academy"
+        },
+        {
+          "type": "webview",
+          "id": "diablo.scoutView",
+          "name": "Scout"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "diablo.lookupSelection",
+        "title": "Diablo: Lookup on Solodit"
+      },
+      {
+        "command": "diablo.analyzeFile",
+        "title": "Diablo: Analyze Current File"
+      },
+      {
+        "command": "diablo.startBackend",
+        "title": "Diablo: Start Backend Server"
+      },
+      {
+        "command": "diablo.stopBackend",
+        "title": "Diablo: Stop Backend Server"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "diablo.lookupSelection",
+          "when": "editorHasSelection",
+          "group": "diablo@1"
+        },
+        {
+          "command": "diablo.analyzeFile",
+          "when": "resourceExtname == .sol",
+          "group": "diablo@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "prepackage": "npm run compile",
+    "package": "vsce package --no-dependencies",
+    "lint": "tsc -p ./ --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.33",
+    "@types/vscode": "^1.109.0",
+    "@vscode/vsce": "^3.7.1",
+    "typescript": "^5.9.3"
+  }
+}

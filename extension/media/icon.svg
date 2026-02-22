@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diablo flame icon -->
+  <path d="M12 2C12 2 6 8 6 14C6 17.3 8.7 20 12 20C15.3 20 18 17.3 18 14C18 8 12 2 12 2Z" fill="#DC2626" opacity="0.9"/>
+  <path d="M12 6C12 6 9 10 9 14C9 15.7 10.3 17 12 17C13.7 17 15 15.7 15 14C15 10 12 6 12 6Z" fill="#F97316" opacity="0.9"/>
+  <path d="M12 10C12 10 10.5 12 10.5 14C10.5 14.8 11.2 15.5 12 15.5C12.8 15.5 13.5 14.8 13.5 14C13.5 12 12 10 12 10Z" fill="#FBBF24"/>
+  <!-- Eye -->
+  <circle cx="12" cy="22" r="1.5" fill="#DC2626"/>
+  <circle cx="12" cy="22" r="0.6" fill="#FFF"/>
+</svg>
