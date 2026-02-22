@@ -104,6 +104,29 @@ cd extension
 code --extensionDevelopmentPath=. .
 ```
 
+## Fast Install (1-2 Commands)
+
+If you want a quick local install into your VS Code/WSL environment:
+
+```bash
+cd Diablo
+./scripts/install-local.sh
+```
+
+This script will:
+- create `.venv` (if missing)
+- install backend package
+- install extension dependencies
+- build `.vsix`
+- install the extension into VS Code
+
+If backend is already configured and you only want extension install/update:
+
+```bash
+cd Diablo
+./scripts/install-extension.sh
+```
+
 ## Installation Troubleshooting
 
 ### `ModuleNotFoundError: No module named 'backend'`

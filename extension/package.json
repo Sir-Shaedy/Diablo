@@ -2,7 +2,7 @@
   "name": "diablo",
   "displayName": "Diablo — Security Intelligence",
   "description": "AI-powered smart contract security auditing, education, and vulnerability intelligence. Powered by 50K+ real Solodit findings.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "shady",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,11 @@
     "solodit"
   ],
   "activationEvents": [
-    "onLanguage:solidity"
+    "onLanguage:solidity",
+    "onStartupFinished",
+    "onView:diablo.dictionaryView",
+    "onView:diablo.academyView",
+    "onView:diablo.scoutView"
   ],
   "main": "./out/extension.js",
   "icon": "media/icon.png",
@@ -123,7 +127,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.33",
-    "@types/vscode": "^1.109.0",
+    "@types/vscode": "^1.85.0",
     "@vscode/vsce": "^3.7.1",
     "typescript": "^5.9.3"
   }
